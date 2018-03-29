@@ -4,8 +4,12 @@ from keras.preprocessing.image import ImageDataGenerator
 class SteelDataGenerator:
 
     @classmethod
-    def get_data_generators(cls, train_dir, val_dir, test_dir, img_width, img_height, batch_size):
+    def get_data_generators(cls, train_dir, val_dir, test_dir, img_width, img_height, batch_size, use_samplewise=True):
         datagen = ImageDataGenerator(
+            samplewise_center=use_samplewise, 
+            samplewise_std_normalization=use_samplewise,
+            featurewise_center=not use_samplewise,
+            featurewise_std_normalization=not use_samplewise,
             rotation_range=40,
             width_shift_range=0.2,
             height_shift_range=0.2,

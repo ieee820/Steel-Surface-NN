@@ -14,4 +14,5 @@ pip install opencv-python
 pip install opencv-contrib-python
 conda install jupyter
 conda install h5py
+conda install matplotlib
 ```
